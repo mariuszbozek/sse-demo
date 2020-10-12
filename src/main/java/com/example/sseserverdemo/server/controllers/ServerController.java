@@ -11,10 +11,10 @@ import java.time.Duration;
 import java.time.LocalTime;
 
 @RestController
-@RequestMapping("/sse-server")
+@RequestMapping("/")
 public class ServerController {
 
-    @GetMapping("/stream-sse")
+    @GetMapping("/")
     public Flux<ServerSentEvent<String>> streamEvents() {
         return Flux.interval(Duration.ofSeconds(30))
             .map(sequence -> ServerSentEvent.<String> builder()
