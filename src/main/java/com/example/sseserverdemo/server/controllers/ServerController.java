@@ -22,7 +22,8 @@ public class ServerController {
                 .event("periodic-event")
                 .data("SSE - " + LocalTime.now()
                     .toString())
-                .build());
+                .build())
+            .log();
     }
 
     @GetMapping(path = "/stream-flux", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
